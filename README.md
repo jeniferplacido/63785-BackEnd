@@ -31,13 +31,13 @@ Para começar, siga estas instruções simples:
 1. Clone este repositório para sua máquina local utilizando o seguinte comando:
 
 ```
-git clone https://github.com/jeniferplacido/54560-backend.git
+git clone https://github.com/jeniferplacido/63785-BackEnd.git
 ```
 
 1. Navegue até o diretório clonado:
 
 ```
-cd 54560-backend
+cd 63785-BackEnd
 ```
 
 1. Explore os exemplos de código na pasta `aulas/` e os projetos práticos na pasta `projetos/`.
