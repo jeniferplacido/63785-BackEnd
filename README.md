@@ -1,6 +1,6 @@
 # Curso de Backend com Node.js - CoderHouse
 
-Bem-vindo ao repositório da turma 54560 do curso de Backend com Node.js da CoderHouse! Estou muito empolgada em ser sua professora e ajudá-lo a mergulhar no mundo do desenvolvimento de backend com Node.js.
+Bem-vindo ao repositório da turma 63785 do curso de Backend com Node.js da CoderHouse! Estou muito empolgada em ser sua professora e ajudá-lo a mergulhar no mundo do desenvolvimento de backend com Node.js.
 
 ## Descrição do Curso
 
