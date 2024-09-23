@@ -1,0 +1,15 @@
+{
+  "name": "handson",
+  "version": "1.0.0",
+  "description": "programa contador de numeros",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ."
+  },
+  "keywords": [
+    "contador",
+    "numeros"
+  ],
+  "author": "alessandra",
+  "license": "ISC"
+}
