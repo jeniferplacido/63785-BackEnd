@@ -34,7 +34,7 @@ app.post('/login', (req, res) => {
     }
 
     let token = jwt.sign({ id: user.id, email: user.email}, 'coderToken', { expiresIn: '1h' });
-    res.cookie('token', token, { httpOnly: true });
+    res.cookie('token', token, {maxAge:30000, httpOnly: true });
     res.send('Login efetuado com sucesso');
 });
 

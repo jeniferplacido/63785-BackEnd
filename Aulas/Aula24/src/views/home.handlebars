@@ -1,0 +1,20 @@
+<h1>Bem-vindo à Loja Coders</h1>
+<p>Confira nossos produtos disponíveis!</p>
+
+<section>
+    <h2>Produtos</h2>
+    {{#if products}}
+        <ul>
+            {{#each products}}
+            <li>
+                <strong>{{nome}}</strong> - {{descricao}} (R$ {{preco}})
+                <form action="/api/carrinho/add/{{_id}}" method="POST" style="display: inline;">
+                    <button type="submit">Adicionar ao Carrinho</button>
+                </form>
+            </li>
+            {{/each}}
+        </ul>
+    {{else}}
+        <p>Nenhum produto disponível no momento.</p>
+    {{/if}}
+</section>

@@ -1,0 +1,25 @@
+<h1>Meu Carrinho</h1>
+<p>Confira os itens que você adicionou:</p>
+
+<section>
+    {{#if cartItems}}
+        <ul>
+            {{#each cartItems}}
+            <li>
+                <strong>{{produtoId.nome}}</strong> - {{produtoId.descricao}} (R$ {{produtoId.preco}})
+                <br>Quantidade: {{quantidade}}
+                <form action="/api/carrinho/remove/{{produtoId._id}}" method="POST" style="display: inline;">
+                    <button type="submit">Remover</button>
+                </form>
+            </li>
+            {{/each}}
+        </ul>
+        <p><strong>Total:</strong> R$ {{total}}</p>
+    {{else}}
+        <p>Seu carrinho está vazio.</p>
+    {{/if}}
+</section>
+
+<form action="/api/carrinho/checkout" method="POST">
+    <button type="submit">Finalizar Compra</button>
+</form>
