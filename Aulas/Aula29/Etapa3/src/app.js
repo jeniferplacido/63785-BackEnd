@@ -12,9 +12,9 @@ const orderRouter = require('./routes/orders.router');
 
 connection();
 
-app.use('/users', userRouter);
-app.use('/business', businessRouter);
-app.use('/orders', orderRouter);
+app.use('api/users', userRouter);
+app.use('api/business', businessRouter);
+app.use('api/orders', orderRouter);
 
 
 app.listen(8080, () => {

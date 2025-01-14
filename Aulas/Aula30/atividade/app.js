@@ -14,21 +14,30 @@ const client = twilio(config.TWILIO_ACCOUNT_SID, config.TWILIO_AUTH_TOKEN);
 // Define uma rota GET para o caminho '/sms'
 app.get('/sms', async (req, res) => {
     try {
+        // Obtém os parâmetros 'nome' e 'produto' da query string
+        const { nome, produto } = req.query;
+        // Verifica se os parâmetros 'nome' e 'produto' estão presentes
+        if (!nome || !produto) {
+            // Se faltar algum parâmetro, envia uma resposta de erro com status 400
+            return res.status(400).send({ status: "erro", result: "Nome e produto são obrigatórios" });
+        }
+        // Cria o corpo da mensagem SMS usando os parâmetros fornecidos
+        const messageBody = `Obrigado, ${nome}! Seu pedido de ${produto} foi aprovado!`;
         // Usa o cliente Twilio para criar e enviar uma mensagem SMS
         const message = await client.messages.create({
-            body: 'Testando o envio de SMS com o Twilio', // Corpo da mensagem
+            body: messageBody, // Corpo da mensagem
             from: config.TWILIO_PHONE_NUMBER, // Número de telefone de origem (Twilio)
-            to: '+5531992782642' // Número de telefone de destino
+            to: '+5511988338413' // Número de telefone de destino
         });
         // Exibe o SID da mensagem no console
         console.log(message.sid);
         // Envia uma resposta de sucesso
-        res.send({status: "sucesso", result: "SMS enviado com sucesso"});
+        res.send({ status: "sucesso", result: "SMS enviado com sucesso" });
     } catch (error) {
         // Exibe o erro no console
         console.log(error);
         // Envia uma resposta de erro com status 500
-        res.status(500).send({status: "erro", result: "Erro ao enviar SMS"});
+        res.status(500).send({ status: "erro", result: "Erro ao enviar SMS" });
     }
 });
 
