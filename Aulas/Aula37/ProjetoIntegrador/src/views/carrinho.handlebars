@@ -1,0 +1,17 @@
+<h1> Carrinho de Compras</h1>
+<ul>
+    {{each carrinho.produtos}}
+        <li>
+            <h2>{{this.produtoId.nome}}</h2>
+            <p> {{this.produtoId.descricao}}</p>
+            <p>R${{this.produtoId.preco}}</p>
+            <p>Quantidade: {{this.quantidade}}</p>
+            <form action="/carrinho/remove" method="POST">
+                <input type="hidden" name="produtoId" value="{{this.produtoId._id}}">
+                <input type="hidden" name="quantidade" value="1">
+                <button type="submit">Remover do carrinho</button>
+            </form>
+        </li>
+    {{/each}}
+</ul>
+<a href="/home">Continuar Comprando</a>
