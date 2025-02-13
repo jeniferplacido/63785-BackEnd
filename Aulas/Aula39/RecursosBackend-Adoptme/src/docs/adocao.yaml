@@ -1,0 +1,17 @@
+paths:
+  /api/adoptions:
+    get:
+      summary: Rota para listar todos as adoções
+      tags:
+        - Adoções
+      responses:
+        "200":
+          description: As adoções foram encontrados com sucesso na base de dados
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Adoption"
+        "500":
+          description: Erro interno no servidor
