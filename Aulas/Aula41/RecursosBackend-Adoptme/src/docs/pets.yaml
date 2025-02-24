@@ -1,0 +1,17 @@
+paths:
+  /api/pets:
+    get:
+      summary: Rota para listar todos os pets
+      tags:
+        - Pets
+      responses:
+        "200":
+          description: Os pets foram encontrados com sucesso na base de dados
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Pet"
+        "500":
+          description: Erro interno no servidor

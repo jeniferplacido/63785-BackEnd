@@ -1,0 +1,43 @@
+paths:
+  /api/users:
+    get:
+      summary: Rota para listar todos os usuários
+      tags:
+        - Usuários
+      responses:
+        "200":
+          description: Os usuários foram encontrados com sucesso na base de dados
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/User"
+        "500":
+          description: Erro interno no servidor
+components:
+  schemas:
+    User:
+      type: object
+      properties:
+      _id:
+        type: string
+        description: Identificador único do usuário gerado pelo MongoDB
+        first_name:
+          type: string
+          description: Primeiro nome do usuário
+        last_name:
+          type: string
+          description: Sobrenome do usuário
+        email:
+          type: string
+          description: E-mail do usuário
+        password:
+          type: string
+          description: Senha do usuário criptografada
+      example:
+        _id: "64c6c3b8b0d1b5c4b5c4b5c4"
+        first_name: "Jenifer"
+        last_name: "Placido"
+        email: "jenifer@placido"
+        password: "2334421" 
